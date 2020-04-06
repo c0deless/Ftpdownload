@@ -3,11 +3,11 @@ import urllib.request as request
 from contextlib import closing
 
 def download(filename):
-    with closing(request.urlopen("ftp://BUZZ:NotMyPassword@ftp.usaradio.com/"+filename)) as r:
-        with open('C:/MyPath/usanews/'+filename,'wb') as f:
+    with closing(request.urlopen("ftp://username:password@ftp.example.com/"+filename)) as r:
+        with open('C:/MyPath/recievingfolder/'+filename,'wb') as f:
             shutil.copyfileobj(r, f)
 
-files = ["newsbreak128.mp3", "toh35.mp3"]
+files = ["file.mp3", "fild1.html"]
 for file in files:
     download(file)
 
